@@ -14,5 +14,38 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
+
+Route::get('/trainer', function () {
+    return view('/trainer', [
+        "title" => "Trainer"
+    ]);
+});
+
+Route::get('/course', function () {
+    return view('course', [
+        "title" => "Course"
+    ]);
+});
+
+Route::get('/fleet', function () {
+    return view('fleet', [
+        "title" => "Fleet"
+    ]);
+});
+
+
+Route::get('/about', function () {
+    return view('about', [
+        'title' => 'About',
+        'active' => 'about',
+        'nim'=> '2402005584',
+        'name' => "Welly Yanto",
+        'email' => 'welly.yanto001@binus.ac.id',
+        'image' => 'welly.jpg'
+    ]);
+});
+
