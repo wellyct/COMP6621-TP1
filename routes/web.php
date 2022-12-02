@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FleetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,24 +21,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/trainer', function () {
-    return view('/trainer', [
-        "title" => "Trainer"
-    ]);
-});
-
-Route::get('/course', function () {
-    return view('course', [
-        "title" => "Course"
-    ]);
-});
-
-Route::get('/fleet', function () {
-    return view('fleet', [
-        "title" => "Fleet"
-    ]);
-});
-
+Route::get('/trainer', [TrainerController::class, 'index']);
+Route::get('/course', [CourseController::class, 'index']);
+Route::get('/fleet', [FleetController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about', [
