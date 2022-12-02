@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TrainerController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FleetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +16,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home"
+    ]);
 });
 
-
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/trainer', [TrainerController::class, 'index']);
+Route::get('/course', [CourseController::class, 'index']);
+Route::get('/fleet', [FleetController::class, 'index']);
 
 Route::get('/about', function () {
-    return view('about');
-
+    return view('about', [
+        'title' => 'About',
+        'active' => 'about',
+        'nim'=> '2402005584',
+        'name' => "Welly Yanto",
+        'email' => 'welly.yanto001@binus.ac.id',
+        'image' => 'welly.jpg'
+    ]);
 });
+
