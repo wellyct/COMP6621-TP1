@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<link href="css.bootstrap.min.css" rel="stylesheet">
+
 <h1>Course</h1>
 
 <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
